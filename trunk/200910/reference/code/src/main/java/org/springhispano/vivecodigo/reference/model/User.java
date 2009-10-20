@@ -1,7 +1,6 @@
 package org.springhispano.vivecodigo.reference.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /** Representa un usuario del sistema. Solamente los usuarios registrados pueden participar en foros.
@@ -11,6 +10,8 @@ import java.util.Date;
 @Entity
 public class User {
 	@Id
+    @SequenceGenerator(name="pk", sequenceName="user_uid_seq", allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="pk")
 	private int uid;
 	private String login;
 	private String nombre;
@@ -18,7 +19,6 @@ public class User {
 	private String passwd;
 	private Date alta;
 
-	//TODO debe ser por secuencia
 	public int getUid() {
 		return uid;
 	}
