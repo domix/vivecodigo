@@ -1,7 +1,6 @@
 package org.springhispano.vivecodigo.reference.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /** Representa un comentario hecho por un usuario en un foro.
@@ -11,10 +10,16 @@ import java.util.Date;
 @Entity
 public class Comentario implements Comparable<Comentario> {
     @Id
+    @SequenceGenerator(name="pk", sequenceName="comentario_cid_seq", allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="pk")
     private int cid;
     private Date alta;
     private String texto;
+    @ManyToOne(optional=false)
+    @JoinColumn(name="uid")
     private User autor;
+    @ManyToOne(optional=false)
+    @JoinColumn(name="fid")
     private Foro foro;
 
     public int getCid() {

@@ -1,7 +1,6 @@
 package org.springhispano.vivecodigo.reference.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Set;
 import java.util.Date;
 
@@ -13,12 +12,17 @@ import java.util.Date;
 @Entity
 public class Foro {
     @Id
+    @SequenceGenerator(name="pk", sequenceName="foro_fid_seq", allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="pk")
     private int fid;
     private String titulo;
     private String texto;
     private Date alta;
+    @ManyToOne(optional=false)
+    @JoinColumn(name="uid")
     private User autor;
     private Set<String> tags;
+    @OneToMany(mappedBy="foro")
     private Set<Comentario> comments;
 
     public int getFid() {
