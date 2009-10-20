@@ -5,12 +5,9 @@ import javax.persistence.Id;
 import java.util.Set;
 import java.util.Date;
 
-/**
- * Created by IntelliJ IDEA.
- * User: ezamudio
- * Date: Oct 20, 2009
- * Time: 11:36:18 AM
- * 
+/** Representa un foro del sitio, que debe haber sido creado por un usuario registrado.
+ * Un foro puede tener varios tags y varios comentarios.
+ *
  * @author: Enrique Zamudio
  */
 @Entity

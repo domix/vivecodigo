@@ -4,12 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
 
-/**
- * Created by IntelliJ IDEA.
- * User: ezamudio
- * Date: Oct 20, 2009
- * Time: 11:37:06 AM
- * To change this template use File | Settings | File Templates.
+/** Representa un comentario hecho por un usuario en un foro.
+ *
+ * @author: Enrique Zamudio
  */
 @Entity
 public class Comentario implements Comparable<Comentario> {
