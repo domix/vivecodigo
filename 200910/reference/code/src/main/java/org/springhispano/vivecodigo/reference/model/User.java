@@ -2,7 +2,12 @@ package org.springhispano.vivecodigo.reference.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
+/** Representa un usuario del sistema. Solamente los usuarios registrados pueden participar en foros.
+ *
+ * @author: Domingo Suarez
+ */
 @Entity
 public class User {
 	@Id
