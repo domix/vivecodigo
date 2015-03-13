@@ -1,0 +1,1 @@
+Este es el projecto sombrilla del código que se genera como referencia o como parte del resultado de las reuniones donde habra "Vive Codigo"
